@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  content: MyString
+  url: MyString
+  type: 
+  order: 
+  rating: 
+  list_id: 
+
+two:
+  name: MyString
+  content: MyString
+  url: MyString
+  type: 
+  order: 
+  rating: 
+  list_id: 
