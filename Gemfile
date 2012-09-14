@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
+gem 'thin'
 
 # Use sqlite in development, heroku for production
 group :development do
@@ -21,6 +22,6 @@ end
 
 # Here be the gems o' me app
 gem 'jquery-rails'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', git: 'git://github.com/thomas-mcdonald/bootstrap-sass', branch: '2.1-wip'
 gem 'eco'
 gem 'devise'
