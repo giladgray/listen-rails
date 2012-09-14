@@ -4,7 +4,11 @@ Listen::Application.routes.draw do
 
   resources :things
 
-  resources :lists
+  resources :lists do
+    member do
+      get 'add'
+    end
+  end
 
   root :to => 'lists#index'
 

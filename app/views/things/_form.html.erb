@@ -1,4 +1,4 @@
-<%= form_for(@thing) do |f| %>
+<%= form_for(@thing ||= Thing.new) do |f| %>
   <% if @thing.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@thing.errors.count, "error") %> prohibited this thing from being saved:</h2>
@@ -13,20 +13,30 @@
 
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'span8' %>
   </div>
+
+  <div class="pull-right">
+    <span class="field">
+      <%= f.label :list %>
+      <%= f.select :list_id, List.all.collect {|list| [list.name, list.id] }, {}, class: 'span2' %>
+    </span>
+    <span class="field">
+      <%= f.label :type %>
+      <%= f.select :thing_type, {}, {}, class: 'span2' %>
+    </span>
+
+    <div class="field">
+      <%= f.label :url %>
+      <%= f.text_field :url, class: 'span4' %>
+    </div>
+  </div>
+  
   <div class="field">
     <%= f.label :content %>
-    <%= f.text_area :content, rows: 5 %>
+    <%= f.text_area :content, rows: 5, class: 'span8' %>
   </div>
-  <div class="field">
-    <%= f.label :url %>
-    <%= f.text_field :url %>
-  </div>
-  <div class="field">
-    <%= f.label :type %>
-    <%= f.text_field :thing_type %>
-  </div>
+
   <div class="actions">
     <%= f.submit class: 'btn btn-primary' %>
     <%= link_to 'Cancel', things_path, class: 'btn' %>

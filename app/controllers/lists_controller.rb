@@ -80,4 +80,14 @@ class ListsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def add
+    @list = List.find(params[:id])
+    @thing = Thing.new(list: @list)
+
+    respond_to do |format|
+      format.html { render 'things/new' }# new.html.erb
+      # format.json { render json: @list }
+    end
+  end
 end

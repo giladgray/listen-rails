@@ -4,3 +4,8 @@
 
 @import "bootstrap";
 @import "bootstrap-responsive";
+
+input, select, button, textarea { box-sizing: border-box; }
+input[type=text] { height: 30px; }
+
+span.field { display: inline-block; }
